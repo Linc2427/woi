@@ -7,4 +7,8 @@ class Perusahaan extends Model
 {
     protected $table = 'perusahaan';
     protected $fillable = ['nama_perusahaan','lokasi','posisi'];
+    public static function find($id){
+        $detail = self::where('id', $id)->first();
+        return $detail;
+    }
 }
