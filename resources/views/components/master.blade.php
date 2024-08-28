@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ $pagetitle }}</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    @vite('resources/css/app.css')
+
+{{--    <script src="https://cdn.tailwindcss.com"></script>--}}
+{{--    <link href="https://cdn.jsdelivr.net/npm/pagedone@1.2.1/src/css/pagedone.css"/>--}}
 </head>
 
 <body>
@@ -112,8 +115,6 @@
         {{ $slot }}
     </div>
 </main>
-</div>
-
 </body>
 
 </html>

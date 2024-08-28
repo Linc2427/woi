@@ -19,6 +19,6 @@ class JobTable extends Component
     // Method render untuk mengembalikan view yang digunakan oleh komponen
     public function render()
     {
-        return view('components.job-table');
+        return view('components.perusahaan-table');
     }
 }
