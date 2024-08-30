@@ -12,7 +12,11 @@ Route::get('/', function () {
 Route::get('/job-detail/{id}', function ($id) {
     $detail = Perusahaan::find($id);
     return view('job-detail', ['detail'=>$detail]);
+
+});Route::get('/about', function () {
+    return view('about', ['user'=>'Miqdad']);
 });
+
 // Controller u/ menambahkan pekerjaan yg diapply
 Route::get('/perusahaan/create', [PerusahaanController::class, 'create'])->name('perusahaan.create');
 Route::post('/perusahaan/store', [PerusahaanController::class, 'store'])->name('perusahaan.store');

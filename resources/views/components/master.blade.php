@@ -7,7 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ $pagetitle }}</title>
     @vite('resources/css/app.css')
-
 {{--    <script src="https://cdn.tailwindcss.com"></script>--}}
 {{--    <link href="https://cdn.jsdelivr.net/npm/pagedone@1.2.1/src/css/pagedone.css"/>--}}
 </head>
@@ -27,7 +26,7 @@
                             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                             <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
                             <x-nav-link href="/about" :active="request()->is('about*')">About</x-nav-link>
-                            <x-nav-link href="/contact" :active="request()->is('contact')">Contact</x-nav-link>
+{{--                            <x-nav-link href="/contact" :active="request()->is('contact')">Contact</x-nav-link>--}}
                         </div>
                     </div>
                 </div>
@@ -89,7 +88,7 @@
                 <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                 <x-nav-link-mobile href="/" :active="request()->is('/')">Home</x-nav-link-mobile>
                 <x-nav-link-mobile href="/about" :active="request()->is('about*')">About</x-nav-link-mobile>
-                <x-nav-link-mobile href="/contact" :active="request()->is('contact')">Contact</x-nav-link-mobile>
+{{--                <x-nav-link-mobile href="/contact" :active="request()->is('contact')">Contact</x-nav-link-mobile>--}}
                 <button type="button"
                         class="relative ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                     <span class="absolute -inset-1.5"></span>
