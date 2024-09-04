@@ -6,7 +6,7 @@
         Tambah Pekerjaan
     </x-slot:heading>
 
-    <div class="container mt-3">
+    <div class="container mt-3" x-data="{ showDatepicker: false }">
         <form action="{{ route('perusahaan.store') }}" method="POST">
             @csrf
             <div class="mb-4">
@@ -26,12 +26,19 @@
 
             <div class="mb-4">
                 <label for="status" class="block text-gray-700 font-bold mb-2">Status:</label>
-                <select id="status" name="status" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                <select id="status" name="status" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required
+                        x-on:change="showDatepicker = ($event.target.value === 'Test')">
                     <option value="Applied">Applied</option>
                     <option value="Test">Test</option>
                     <option value="Accepted">Accepted</option>
                     <option value="Rejected">Rejected</option>
                 </select>
+            </div>
+
+            <!-- Datepicker muncul ketika opsi "Test" dipilih -->
+            <div class="mb-4" x-show="showDatepicker" x-cloak>
+                <label for="tanggal_test" class="block text-gray-700 font-bold mb-2">Tanggal Test:</label>
+                <input type="date" id="tanggal_test" name="tanggal_test" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
             </div>
 
             <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Submit</button>

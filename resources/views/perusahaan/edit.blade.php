@@ -6,7 +6,7 @@
         Edit Data Perusahaan
     </x-slot:heading>
 
-    <div class="container mx-auto mt-8">
+    <div class="container mx-auto mt-8" x-data="{ showDatepicker: '{{ $perusahaan->status }}' === 'Test' }">
         <form action="{{ route('perusahaan.update', $perusahaan->id) }}" method="POST">
             @csrf
             @method('PUT')
@@ -28,7 +28,8 @@
 
             <div class="mb-4">
                 <label for="status" class="block text-gray-700">Status</label>
-                <select name="status" id="status" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600">
+                <select id="status" name="status" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required
+                        x-on:change="showDatepicker = ($event.target.value === 'Test')">
                     <option value="Applied" {{ $perusahaan->status == 'Applied' ? 'selected' : '' }}>Applied</option>
                     <option value="Test" {{ $perusahaan->status == 'Test' ? 'selected' : '' }}>Test</option>
                     <option value="Accepted" {{ $perusahaan->status == 'Accepted' ? 'selected' : '' }}>Accepted</option>
@@ -36,8 +37,15 @@
                 </select>
             </div>
 
-            <div class="flex justify-end">
-                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg">Update</button>
+            <div class="mb-4" x-show="showDatepicker" x-cloak>
+                <label for="tanggal_test" class="block text-gray-700">Tanggal Test</label>
+                <input type="date" name="tanggal_test" id="tanggal_test" value="{{ old('tanggal_test', $perusahaan->tanggal_test) }}" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600">
+            </div>
+
+            <div class="flex items-center justify-between">
+                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                    Update
+                </button>
             </div>
         </form>
     </div>

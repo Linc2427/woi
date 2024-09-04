@@ -9,6 +9,7 @@
     @vite('resources/css/app.css')
 {{--    <script src="https://cdn.tailwindcss.com"></script>--}}
 {{--    <link href="https://cdn.jsdelivr.net/npm/pagedone@1.2.1/src/css/pagedone.css"/>--}}
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
 <body>
