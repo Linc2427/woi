@@ -8,6 +8,9 @@ use App\Models\Perusahaan;
 
 class PerusahaanController extends Controller
 {
+    public function index(){
+        $data=Perusahaan::latest()->first();
+    }
     public function create()
     {
         return view('perusahaan.create');

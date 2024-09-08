@@ -5,7 +5,7 @@ use App\Models\Perusahaan;
 use App\Http\Controllers\PerusahaanController;
 
 Route::get('/', function () {
-    $list = Perusahaan::all();
+    $list = Perusahaan::latest()->paginate(10);
     return view('home', ['user' => 'Miqdad', 'list' => $list]);
 })->name('home');
 

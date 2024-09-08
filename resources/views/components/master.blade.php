@@ -12,7 +12,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
-<body>
+<body class="bg-white text-black dark:bg-gray-900 dark:text-white">
 <div class="min-h-full">
     <nav class="bg-gray-800">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -105,9 +105,9 @@
 </div>
 </nav>
 
-<header class="bg-white shadow">
+<header class="bg-white text-black dark:bg-gray-800 dark:text-white shadow">
     <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-        <h1 class="text-3xl font-bold tracking-tight text-gray-900">{{ $heading }}</h1>
+        <h1 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $heading }}</h1>
     </div>
 </header>
 <main>
@@ -115,6 +115,7 @@
         {{ $slot }}
     </div>
 </main>
+<script src="{{ asset('js/theme-toggle.js') }}"></script>
 </body>
 
 </html>
