@@ -28,7 +28,7 @@
                     </td>
                     <td class="border py-4 px-6 text-gray-600 dark:text-gray-300">{{ \Carbon\Carbon::parse($items['created_at'])->format('d M Y') }}</td>
                     <td class="border py-4 px-6 flex justify-center">
-                        <a href="/job-detail/{{ $items->id }}" class="focus:outline-none text-black bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 dark:bg-yellow-500 dark:hover:bg-yellow-600 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Detail</a>
+                        <a href="/job-detail/{{ $items->id }}" class="focus:outline-none text-black bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 dark:bg-violet-800 dark:hover:bg-violet-900 dark:text-white font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Detail</a>
                         <a href="{{ route('perusahaan.edit', $items->id) }}" class="focus:outline-none text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 dark:bg-blue-500 dark:hover:bg-blue-600 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Edit</a>
                         <form action="{{ route('perusahaan.destroy', $items->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this item?');">
                             @csrf
